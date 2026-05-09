@@ -39,7 +39,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col text-foreground scroll-smooth">
-        <HaloEffect speed={2} />
+        <HaloEffect />
         {children}
       </body>
     </html>

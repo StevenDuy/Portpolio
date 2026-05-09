@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export function HaloEffect({
-  count1 = 3,
-  count2 = 3,
-  count3 = 2,
+  count1 = 2,
+  count2 = 2,
+  count3 = 1,
   size = 400,
-  speed = 8,
+  speed = 1.5,
   blur = 120,
   color1 = "rgba(59, 130, 246, 0.15)", // Primary #3b82f6
   color2 = "rgba(139, 92, 246, 0.15)", // Secondary #8b5cf6
@@ -25,11 +25,24 @@ export function HaloEffect({
   color3?: string;
 }) {
   const [circles, setCircles] = useState<any[]>([]);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Initialize circles with random starting positions
+    // Check if device is desktop
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+
+    // Initialize circles with random starting positions for desktop
     const initialCircles = [
-      // Set 1: Circles with color1
       ...Array.from({ length: count1 }, () => ({
         id: Math.random(),
         initialX: Math.random() * (window.innerWidth - size),
@@ -38,7 +51,6 @@ export function HaloEffect({
         y: Math.random() * (window.innerHeight - size),
         color: color1,
       })),
-      // Set 2: Circles with color2
       ...Array.from({ length: count2 }, () => ({
         id: Math.random(),
         initialX: Math.random() * (window.innerWidth - size),
@@ -47,7 +59,6 @@ export function HaloEffect({
         y: Math.random() * (window.innerHeight - size),
         color: color2,
       })),
-      // Set 3: Circles with color3
       ...Array.from({ length: count3 }, () => ({
         id: Math.random(),
         initialX: Math.random() * (window.innerWidth - size),
@@ -60,7 +71,6 @@ export function HaloEffect({
     
     setCircles(initialCircles);
 
-    // Set interval to update position after the initial rendering
     const interval = setInterval(() => {
       setCircles((prevCircles) =>
         prevCircles.map((circle) => ({
@@ -72,7 +82,7 @@ export function HaloEffect({
     }, speed * 1000);
 
     return () => clearInterval(interval);
-  }, [size, speed, blur, count1, count2, count3, color1, color2, color3]);
+  }, [isDesktop, size, speed, count1, count2, count3, color1, color2, color3]);
 
   return (
     <div
@@ -83,12 +93,17 @@ export function HaloEffect({
         width: "100vw",
         height: "100vh",
         overflow: "hidden",
-        zIndex: -10, // Keep it far behind everything
-        pointerEvents: "none", // Prevent it from blocking clicks
-        backgroundColor: "var(--color-background)", // Ensure the base dark color remains
+        zIndex: -10,
+        pointerEvents: "none",
+        backgroundColor: "var(--color-background)",
+        // Keep the static background as a fallback/base for mobile
+        backgroundImage: isDesktop ? "none" :
+          "radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15), transparent 40%), " +
+          "radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15), transparent 40%), " +
+          "radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.1), transparent 50%)"
       }}
     >
-      {circles.map((circle) => (
+      {isDesktop && circles.map((circle) => (
         <motion.div
           key={circle.id}
           animate={{ x: circle.x, y: circle.y }}
