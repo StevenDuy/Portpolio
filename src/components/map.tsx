@@ -30,7 +30,7 @@ export default function Map() {
 
   return (
     <div className="h-[300px] w-full z-0 relative border-t border-border/50">
-      <MapContainer center={[9.8, 105.6]} zoom={8} scrollWheelZoom={true} zoomControl={false} className="h-full w-full z-0">
+      <MapContainer center={[9.8, 105.6]} zoom={8} scrollWheelZoom={false} zoomControl={true} className="h-full w-full z-0">
         <TileLayer
           attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
           url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"

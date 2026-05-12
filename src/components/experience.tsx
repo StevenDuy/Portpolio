@@ -25,7 +25,7 @@ export function ExperienceSection() {
               <Briefcase className="w-3 h-3 text-secondary" />
             </div>
             
-            <Card className="border-border/50 bg-card/50 hover:bg-card hover:border-secondary/30 transition-colors">
+            <Card className="border-border/50 bg-card/50 hover:bg-card hover:border-secondary/30 transition-colors cursor-pointer">
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 space-y-2 md:space-y-0">
                   <div>

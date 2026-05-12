@@ -49,7 +49,13 @@ export function ProjectsSection() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Card className="overflow-hidden border-border/50 bg-background/50 hover:bg-card/80 transition-colors duration-300">
+            <a 
+              href={project.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block group/card"
+            >
+              <Card className="overflow-hidden border-border/50 bg-background/50 hover:bg-card/80 transition-all duration-300 cursor-pointer hover:border-primary/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]">
                 <div className="flex flex-col md:flex-row">
                   <div className="p-6 md:p-8 flex-1 space-y-6">
                     <div className="space-y-2">
@@ -58,12 +64,12 @@ export function ProjectsSection() {
                           {project.type}
                         </span>
                         {project.link && (
-                          <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block p-1" aria-label={`View ${project.title} on GitHub`}>
-                            <ArrowUpRight className="h-5 w-5 text-muted opacity-50 hover:opacity-100 hover:text-primary transition-all cursor-pointer hover:scale-110" />
-                          </a>
+                          <div className="inline-block p-1">
+                            <ArrowUpRight className="h-5 w-5 text-muted opacity-50 group-hover/card:opacity-100 group-hover/card:text-primary transition-all duration-300 group-hover/card:scale-125" />
+                          </div>
                         )}
                       </div>
-                      <CardTitle className="text-2xl md:text-3xl font-bold text-foreground">
+                      <CardTitle className="text-2xl md:text-3xl font-bold text-foreground group-hover/card:text-primary transition-colors duration-300">
                         {project.title}
                       </CardTitle>
                     </div>
@@ -98,6 +104,7 @@ export function ProjectsSection() {
                   </div>
                 </div>
               </Card>
+            </a>
             </motion.div>
           ))}
         </div>

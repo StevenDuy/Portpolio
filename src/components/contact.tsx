@@ -72,7 +72,7 @@ export function ContactSection() {
                       </div>
                       <div>
                         <p className="text-sm text-muted mb-1">Facebook</p>
-                        <a href="https://www.facebook.com/duy.hohoang.319" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-blue-500 transition-colors font-medium">
+                        <a href="https://www.facebook.com/duy.hohoang.319" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-blue-500 transition-colors font-medium cursor-pointer">
                           Ho Hoang Duy
                         </a>
                       </div>
@@ -84,7 +84,7 @@ export function ContactSection() {
                       </div>
                       <div>
                         <p className="text-sm text-muted mb-1">Email</p>
-                        <a href="mailto:duyh030774@gmail.com" className="text-foreground hover:text-secondary transition-colors font-medium break-all">
+                        <a href="mailto:duyh030774@gmail.com" className="text-foreground hover:text-secondary transition-colors font-medium break-all cursor-pointer">
                           duyh030774@gmail.com
                         </a>
                       </div>
@@ -101,8 +101,8 @@ export function ContactSection() {
                   </p>
 
                   <div className="space-y-4">
-                    <Button size="lg" className="w-full justify-start space-x-3" asChild>
-                      <a href="https://github.com/StevenDuy" target="_blank" rel="noopener noreferrer">
+                    <Button size="lg" className="w-full justify-start space-x-3 cursor-pointer" asChild>
+                      <a href="https://github.com/StevenDuy" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
                         <GithubIcon className="w-5 h-5" />
                         <span>GitHub Profile</span>
                       </a>
@@ -111,19 +111,19 @@ export function ContactSection() {
                     {showCVActions ? (
                       <div className="flex items-center gap-2 w-full animate-in fade-in slide-in-from-top-2">
                         <div className="grid grid-cols-2 gap-2 flex-1">
-                          <Button size="lg" variant="outline" className="w-full" onClick={() => setSelectedPDF("/Hồ_Hoàng_Duy_Sơ_Yếu_Lý_Lịch.pdf")}>
+                          <Button size="lg" variant="outline" className="w-full cursor-pointer" onClick={() => setSelectedPDF("/Hồ_Hoàng_Duy_Sơ_Yếu_Lý_Lịch.pdf")}>
                             Vietnamese
                           </Button>
-                          <Button size="lg" variant="outline" className="w-full" onClick={() => setSelectedPDF("/BTEC_FPT_Student_Intership-CV_Resume.pdf")}>
+                          <Button size="lg" variant="outline" className="w-full cursor-pointer" onClick={() => setSelectedPDF("/BTEC_FPT_Student_Intership-CV_Resume.pdf")}>
                             English
                           </Button>
                         </div>
-                        <Button size="icon" variant="ghost" className="h-11 w-11 shrink-0" onClick={() => setShowCVActions(false)}>
+                        <Button size="icon" variant="ghost" className="h-11 w-11 shrink-0 cursor-pointer" onClick={() => setShowCVActions(false)}>
                           <X className="w-5 h-5" />
                         </Button>
                       </div>
                     ) : (
-                      <Button size="lg" variant="outline" className="w-full justify-start space-x-3" onClick={() => setShowCVActions(true)}>
+                      <Button size="lg" variant="outline" className="w-full justify-start space-x-3 cursor-pointer" onClick={() => setShowCVActions(true)}>
                         <Eye className="w-5 h-5" />
                         <span>View CV</span>
                       </Button>

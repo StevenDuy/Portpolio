@@ -64,7 +64,7 @@ export function SkillsSection() {
         >
           {skills.map((skill, index) => (
             <motion.div key={index} variants={itemVariants} className="h-full">
-              <Card className="h-full group border-border/50 bg-card/50 backdrop-blur hover:bg-card hover:border-primary/50 transition-all duration-300">
+              <Card className="h-full group border-border/50 bg-card/50 backdrop-blur hover:bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer">
                 <CardContent className="h-full p-6 flex flex-col items-center justify-center text-center space-y-4">
                   <div className="shrink-0 p-3 rounded-full bg-background border border-border group-hover:scale-110 transition-transform duration-300">
                     {skill.icon}
