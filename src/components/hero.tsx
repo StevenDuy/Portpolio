@@ -57,9 +57,23 @@ export function HeroSection() {
           className="flex flex-col gap-8 justify-center z-20 w-full max-w-lg mx-auto lg:mx-0 lg:ml-auto"
         >
           
-          {/* Designation Box */}
-          <div className="border-l-2 border-t-2 border-secondary/40 p-6 bg-background/20 backdrop-blur-sm relative">
-            <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-secondary" />
+          {/* Profile Box - BLUE (Primary) */}
+          <div className="border-l-2 border-primary/40 p-6 bg-background/20 backdrop-blur-sm relative">
+            <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-primary shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+            
+            <div className="group flex items-center gap-2 text-primary font-mono text-xs mb-3 tracking-widest uppercase cursor-default w-fit">
+              <Activity className="w-4 h-4 group-hover:scale-125 group-hover:text-white transition-all duration-300" />
+              <span className="group-hover:translate-x-1 group-hover:text-white transition-all duration-300">ABOUT ME</span>
+            </div>
+            
+            <p className="text-xs md:text-sm text-muted/90 leading-relaxed font-mono">
+              Adaptable <span className="text-foreground font-semibold cursor-help hover:text-primary hover:drop-shadow-[0_0_5px_rgba(59,130,246,0.8)] transition-all duration-300 border-b border-primary/20 hover:border-primary">Software Engineering</span> student at <span className="text-foreground font-semibold cursor-help hover:text-secondary hover:drop-shadow-[0_0_5px_rgba(139,92,246,0.8)] transition-all duration-300 border-b border-secondary/20 hover:border-secondary">BTEC FPT</span> with hands-on experience in full-stack, AI integration, and IoT. Focused on building scalable architecture and practical solutions.
+            </p>
+          </div>
+
+          {/* Designation Box - PURPLE (Secondary) */}
+          <div className="border-l-2 border-secondary/40 p-6 bg-background/20 backdrop-blur-sm relative">
+            <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-secondary shadow-[0_0_8px_rgba(139,92,246,0.8)]" />
             
             <div className="group flex items-center gap-2 text-secondary font-mono text-xs mb-3 tracking-widest uppercase cursor-default w-fit">
               <Terminal className="w-4 h-4 group-hover:scale-125 group-hover:text-white transition-all duration-300" />
@@ -75,16 +89,18 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Core Skills Box */}
-          <div className="border-l-2 border-primary/40 p-6 bg-background/20 backdrop-blur-sm relative">
-            <div className="group flex items-center gap-2 text-primary font-mono text-xs mb-4 tracking-widest uppercase cursor-default w-fit">
+          {/* Core Skills Box - CYAN */}
+          <div className="border-l-2 border-cyan-500/40 p-6 bg-background/20 backdrop-blur-sm relative">
+            <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+            
+            <div className="group flex items-center gap-2 text-cyan-400 font-mono text-xs mb-4 tracking-widest uppercase cursor-default w-fit">
               <Cpu className="w-4 h-4 group-hover:scale-125 group-hover:text-white transition-all duration-300" />
               <span className="group-hover:translate-x-1 group-hover:text-white transition-all duration-300">CORE SKILLS</span>
             </div>
             
             <ul className="space-y-4 font-mono text-base text-foreground/80 w-full">
               <li className="flex items-center gap-3 group cursor-default">
-                <span className="w-2 h-2 bg-primary/50 group-hover:bg-primary rounded-full transition-all duration-300 group-hover:scale-150 group-hover:shadow-[0_0_8px_var(--color-primary)]"/>
+                <span className="w-2 h-2 bg-cyan-500/50 group-hover:bg-cyan-400 rounded-full transition-all duration-300 group-hover:scale-150 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.8)]"/>
                 <span className="group-hover:text-white transition-all group-hover:translate-x-1 duration-300">Laravel API Development</span>
               </li>
               <li className="flex items-center gap-3 group cursor-default">
@@ -92,7 +108,7 @@ export function HeroSection() {
                 <span className="group-hover:text-white transition-all group-hover:translate-x-1 duration-300">Next.js UI & Architecture</span>
               </li>
               <li className="flex items-center gap-3 group cursor-default">
-                <span className="w-2 h-2 bg-primary/50 group-hover:bg-primary rounded-full transition-all duration-300 group-hover:scale-150 group-hover:shadow-[0_0_8px_var(--color-primary)]"/>
+                <span className="w-2 h-2 bg-cyan-500/50 group-hover:bg-cyan-400 rounded-full transition-all duration-300 group-hover:scale-150 group-hover:shadow-[0_0_8px_rgba(34,211,238,0.8)]"/>
                 <span className="group-hover:text-white transition-all group-hover:translate-x-1 duration-300">AI Logic Integration</span>
               </li>
             </ul>
